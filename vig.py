@@ -1,0 +1,5 @@
+decrypt=lambda s,key: "".join([chr((ord(s[i]) - ord(key[i % len(key)])) % 26 + ord('A')) for i in range(len(s))])
+print(decrypt("VECIHXEJZXMA","TCPIP"))
+encrypt = lambda s,key: "".join([chr((ord(s[i]) + ord(key[i % len(key)])) % 26 + ord('A')) for i in range(len(s))])
+print(encrypt("CISCO","WAF"))
+print(decrypt(encrypt("CISCO","WAF"),"WAF"))
